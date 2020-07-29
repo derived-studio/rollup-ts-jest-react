@@ -1,5 +1,5 @@
 {
-  "name": "rollup-ts-jest-react",
+  "name": "@derived/rollup-ts-jest-react",
   "version": "0.0.1",
   "author": "Dan Elder / Mark Bevels",
   "lib": "greeter",
