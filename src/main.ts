@@ -1,5 +1,9 @@
-import * as Accordion from './modules/accordion/accordion';
-import * as Alert from './modules/alert/alert';
+import { version } from '../package.json'
 
-Accordion.init();
-Alert.init();
+export interface IHello {
+  hello: () => string
+}
+
+export const greeter: IHello = {
+  hello: () => `Hello world from version: ${version}`
+}

@@ -1,7 +1,11 @@
 {
-  "name": "typescript-rollup-jest",
+  "name": "rollup-ts-jest-react",
   "version": "0.0.1",
-  "author": "Dan Elder",
+  "author": "Dan Elder / Mark Bevels",
+  "lib": "greeter",
+  "main": "dist/[lib].cjs.js",
+  "module": "dist/[lib].esm.js",
+  "browser": "dist/[lib].min.js",
   "engines": {
     "node": ">=12",
     "npm": ">=6"
@@ -13,37 +17,55 @@
   "files": [
     "dist"
   ],
-  "types": "dist/modules/index.d.ts",
-  "description": "Typescript starter project with Rollup and Jest",
+  "types": "dist/index.d.ts",
+  "description": "Typescript starter project with Rollup and Jest and React",
   "license": "ISC",
   "scripts": {
-    "build": "run-s clean test build_js",
-    "build_js": "rollup -c",
-    "serve": "run-s clean serve_html serve_local",
+    "build": "run-s clean lint test rollup",
+    "mkdir:dist": "mkdir",
+    "rollup": "rollup -c",
     "serve_html": "node lib/wrap-html.js",
     "serve_local": "run-p serve_js serve_livereload serve_httpserver",
     "serve_js": "NODE_ENV=development rollup -c -w",
     "serve_livereload": "livereload dist",
     "serve_httpserver": "http-server ./dist -o -d false",
-    "test": "run-s test_lint test_coverage",
-    "test_lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "test_coverage": "jest --coverage",
+    "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
+    "test": "jest --coverage --config ./config/jest/jest.config.js",
     "clean": "rimraf dist"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-typescript": "^2.0.1",
+    "@testing-library/jest-dom": "^5.11.2",
+    "@testing-library/react": "^10.4.7",
     "@types/jest": "^24.0.25",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jest": "^23.19.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
     "glob": "^7.1.6",
     "http-server": "^0.12.0",
     "jest": "^24.9.0",
     "livereload": "^0.8.2",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.4",
     "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "rimraf": "^3.0.0",
     "rollup": "^1.27.14",
+    "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-uglify": "^6.0.4",
-    "ts-jest": "^24.2.0",
-    "tslint": "^5.20.1",
-    "typescript": "^3.7.4"
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "eslint-plugin-import": "^2.22.0"
   }
 }

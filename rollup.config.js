@@ -1,33 +1,44 @@
-import typescript from '@rollup/plugin-typescript';
-import { uglify } from 'rollup-plugin-uglify';
+import json from '@rollup/plugin-json'
+import commonjs from '@rollup/plugin-commonjs'
+import typescript from '@rollup/plugin-typescript'
+import { terser } from 'rollup-plugin-terser'
+import { uglify } from 'rollup-plugin-uglify'
 
-const pkg = require('./package.json');
-const version = pkg.version;
-const isProduction = process.env.NODE_ENV !== 'development';
+import pkg, { version, lib } from './package.json'
+
+const isProduction = process.env.NODE_ENV !== 'development'
+const distDir = 'dist/'
+
+const toLibFile = lib ? (file) => file.replace('[lib]', lib) : (file) => file
+
+const outputDefaults = { sourcemap: true, banner: `/*! ${version} */` }
 
 export default {
   input: ['src/main.ts'],
-  output: {
-    file: 'dist/js/bundle.js',
-    format: 'iife',
-    sourcemap: true,
-    banner: `/*! ${version} */`
-  },
+  output: [
+    { ...outputDefaults, file: toLibFile(pkg.module), format: 'es' },
+    { ...outputDefaults, file: toLibFile(pkg.browser), format: 'iife', name: pkg.module },
+    { ...outputDefaults, file: toLibFile(pkg.main), format: 'cjs' }
+  ],
   watch: {
     include: ['src/**'],
     exclude: ['node_modules/**']
   },
   plugins: [
+    commonjs(),
+    json(),
     typescript(),
-    isProduction ? uglify({
-      compress: {
-        pure_funcs: [ 'console.log' ]
-      },
-      output: {
-        comments: (node, comment) => {
-          return comment.line === 1
-        }
-      }
-    }) : {}
+    isProduction
+      ? terser({
+          compress: {
+            pure_funcs: ['console.log']
+          },
+          output: {
+            comments: (node, comment) => {
+              return comment.line === 1
+            }
+          }
+        })
+      : {}
   ]
-};
+}
