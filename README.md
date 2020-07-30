@@ -4,7 +4,8 @@ Starter project for building typescript projects using Rollup and Jest, React an
 
 ## Inspiration
 
-This project has been originally inspired, and thus forked from (danielelder/typescript-rollup-jest)[https://github.com/danielelder/typescript-rollup-jest].
+This project has been originally inspired, and thus forked from [danielelder/typescript-rollup-jest](https://github.com/danielelder/typescript-rollup-jest).
+It shares the same ISC license but doesn't really share much code.
 
 ## Usage
 
@@ -29,8 +30,8 @@ git clone --depth=1 git@github.com:derived-studio/rollup-ts-jest-react.git [your
 - [x] Uses [typescript-eslint@3.7.1](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v3.7.1) instead of tslint
 - [x] Adds NPM distribution friendly output bundle files
 - [x] Distributes with TS definition files
+- [x] Includes an example build for naive greeter lib
 - [x] Improves jest configuration with initial jest setup
-
 - [x] Supports React and React-Dom
 - [x] Includes [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [x] Git hooks for pre commit and pre push (with husky)
