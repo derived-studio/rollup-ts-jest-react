@@ -6,6 +6,12 @@ Starter project for building typescript projects using Rollup and Jest, React an
 
 This project has been originally inspired, and thus forked from (danielelder/typescript-rollup-jest)[https://github.com/danielelder/typescript-rollup-jest].
 
+## Usage
+
+```
+git clone --depth=1 git@github.com:derived-studio/rollup-ts-jest-react.git [yourProjectName]
+```
+
 ## Original features
 
 - [x] Statically typed build system for working with [Typescript](https://www.typescriptlang.org/).
@@ -21,18 +27,19 @@ This project has been originally inspired, and thus forked from (danielelder/typ
 ## Fork features
 
 - [x] Uses [typescript-eslint@3.7.1](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v3.7.1) instead of tslint
-- [x] Add NPM distribution friendly output bundle files
-- [x] Distribute with TS definition files
-- [x] Improve jest configuration with initial jest setup
+- [x] Adds NPM distribution friendly output bundle files
+- [x] Distributes with TS definition files
+- [x] Improves jest configuration with initial jest setup
 
-- [x] Added React and React-Dom support
-- [x] Integrate react, react-dom
-- [x] Integrate [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [x] Supports React and React-Dom
+- [x] Includes [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [x] Git hooks for pre commit and pre push (with husky)
 
-- [-] Clean up npm scripts **(in progress)**
-- [-] Restore serve files
-- [-] Include react in an example build
-- [-] Add git hooks for pre commit and pre push (with husky)
+## Todo
+
+- [ ] Clean up npm scripts **(in progress)**
+- [ ] Restore serve files
+- [ ] Include react in an example build
 
 ## Scripts
 
