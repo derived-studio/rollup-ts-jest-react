@@ -1,6 +1,6 @@
 {
   "name": "@derived/rollup-ts-jest-react",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Dan Elder / Mark Bevels",
   "lib": "greeter",
   "main": "dist/[lib].cjs.js",
@@ -22,13 +22,7 @@
   "license": "ISC",
   "scripts": {
     "build": "run-s clean lint test rollup",
-    "mkdir:dist": "mkdir",
     "rollup": "rollup -c",
-    "serve_html": "node lib/wrap-html.js",
-    "serve_local": "run-p serve_js serve_livereload serve_httpserver",
-    "serve_js": "NODE_ENV=development rollup -c -w",
-    "serve_livereload": "livereload dist",
-    "serve_httpserver": "http-server ./dist -o -d false",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
     "test": "jest --coverage --config ./config/jest/jest.config.js",
     "clean": "rimraf dist"
@@ -53,7 +47,6 @@
     "http-server": "^0.12.0",
     "jest": "^24.9.0",
     "livereload": "^0.8.2",
-    "mkdirp": "^1.0.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "react": "^16.13.1",

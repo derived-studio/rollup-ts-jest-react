@@ -1,24 +1,44 @@
 # Typescript, Rollup & Jest Starter
 
-Starter project for building typescript projects using Rollup and Jest.
+Starter project for building typescript projects using Rollup and Jest, React and React Test Library.
 
-## Features
+## Inspiration
+
+This project has been originally inspired, and thus forked from (danielelder/typescript-rollup-jest)[https://github.com/danielelder/typescript-rollup-jest].
+
+## Original features
 
 - [x] Statically typed build system for working with [Typescript](https://www.typescriptlang.org/).
-- [x] Consistent code style with [TSLint](https://palantir.github.io/tslint/).
+- [x] Consistent code style with [TSLint](https://palantir.github.io/tslint/). - **(removed)**
 - [x] Dead code elimination
 - [x] [Rollup](http://rollupjs.org/) for bundling
 - [x] [Jest](https://jestjs.io/en/) for unit testing and code coverage
 - [x] [JSDOM](https://github.com/tmpvar/jsdom) for DOM based testing
 - [x] Flexible build configuration using environment variables
-- [x] Rapid development with automatic javascript building and browser hot reloading 
+- [x] Rapid development with automatic javascript building and browser hot reloading
 - [x] Easy debugging via VSCode integration
+
+## Fork features
+
+- [x] Uses [typescript-eslint@3.7.1](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v3.7.1) instead of tslint
+- [x] Add NPM distribution friendly output bundle files
+
+- [x] Improve jest configuration with initial jest setup
+
+- [x] Added React and React-Dom support
+- [x] Integrate react, react-dom
+- [x] Integrate [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+
+- [-] Clean up npm scripts **(in progress)**
+- [-] Restore serve files
+- [-] Include react in an example build
 
 ## Scripts
 
 - `build` - Builds the minified production bundle along with typescript modules
-- `serve` - Builds the development bundle, creates a local server and watches for changes
-- `test`  - Run the linting and unit tests (including code coverage report)
+- `test` - Run the linting and unit tests (including code coverage report)
+-
+- `serve` - **temporarily disabled** Builds the development bundle, creates a local server and watches for changes
 
 ## VS Code Integration
 
@@ -30,7 +50,7 @@ Access the task list using `shift+command+b` (`ctrl+shift+b` in Windows) to run 
 
 Unit tests can be debugged from within VS Code by placing a break point within your code and then launching the debugger.
 
-- `Jest - All`     - Runs all unit tests in debug mode
+- `Jest - All` - Runs all unit tests in debug mode
 - `Jest - Current` - Runs the currently visible within VS Code editor
 
 ## Coverage reports
