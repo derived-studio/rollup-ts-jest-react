@@ -25,7 +25,8 @@
     "rollup": "rollup -c",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
     "test": "jest --coverage --config ./config/jest/jest.config.js",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "detach": "rimraf .git && git init"
   },
   "husky": {
     "hooks": {

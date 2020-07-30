@@ -13,6 +13,22 @@ It shares the same ISC license but doesn't really share much code.
 git clone --depth=1 git@github.com:derived-studio/rollup-ts-jest-react.git [yourProjectName]
 ```
 
+### Optional
+
+To remove git history run from project folder
+
+```
+yarn
+yarn detach
+```
+
+After detaching remove `detach` script from `package.json` and run
+
+```
+git add .
+git commit "Initial commit"
+```
+
 ## Original features
 
 - [x] Statically typed build system for working with [Typescript](https://www.typescriptlang.org/).
@@ -35,6 +51,7 @@ git clone --depth=1 git@github.com:derived-studio/rollup-ts-jest-react.git [your
 - [x] Supports React and React-Dom
 - [x] Includes [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [x] Git hooks for pre commit and pre push (with husky)
+- [x] Contains `yarn detach` script removing git history
 
 ## Todo
 
