@@ -1,9 +1,9 @@
-import { version } from '../package.json'
+const { version } = require('../package.json')
 
-export interface IHello {
+export interface IGreeter {
   hello: () => string
 }
 
-export const greeter: IHello = {
+export const greeter: IGreeter = {
   hello: () => `Hello world from version: ${version}`
 }

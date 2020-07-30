@@ -3,13 +3,12 @@
     "allowJs": true,
     "checkJs": false,
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
+    "lib": ["es5", "es2015", "es2016", "es2017", "es2018", "es2019", "es2020", "esnext"],
     "esModuleInterop": true,
     "importHelpers": true,
     "jsx": "preserve",
-    "target": "es2019",
-
-    "module": "CommonJS",
+    "target": "es2017",
+    "module": "esnext",
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -20,7 +19,6 @@
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
     "noFallthroughCasesInSwitch": false,
-    "outDir": "./dist/",
     "removeComments": true,
     "resolveJsonModule": true,
     "sourceMap": true,
@@ -28,5 +26,6 @@
     "noImplicitAny": false,
     "plugins": []
   },
+  "include": ["src/**/*.*"],
   "exclude": ["node_modules/", "scripts/", "build/", "dist/", "docs/"]
 }

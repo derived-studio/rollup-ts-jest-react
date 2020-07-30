@@ -1,5 +1,5 @@
 import { greeter } from './main'
-import { version } from '../package.json'
+const { version } = require('../package.json')
 
 describe('Greeter', () => {
   it('says hello', () => {

@@ -22,7 +22,7 @@ This project has been originally inspired, and thus forked from (danielelder/typ
 
 - [x] Uses [typescript-eslint@3.7.1](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v3.7.1) instead of tslint
 - [x] Add NPM distribution friendly output bundle files
-
+- [x] Distribute with TS definition files
 - [x] Improve jest configuration with initial jest setup
 
 - [x] Added React and React-Dom support
@@ -32,12 +32,14 @@ This project has been originally inspired, and thus forked from (danielelder/typ
 - [-] Clean up npm scripts **(in progress)**
 - [-] Restore serve files
 - [-] Include react in an example build
+- [-] Add git hooks for pre commit and pre push (with husky)
 
 ## Scripts
 
 - `build` - Builds the minified production bundle along with typescript modules
-- `test` - Run the linting and unit tests (including code coverage report)
--
+- `test` - Runs tests with code coverage report
+- `lint` - Lints source files
+- `clean` - removes `dist` folder
 - `serve` - **temporarily disabled** Builds the development bundle, creates a local server and watches for changes
 
 ## VS Code Integration
